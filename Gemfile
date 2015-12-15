@@ -4,6 +4,7 @@ gem "omniauth-github"
 gem "figaro"
 gem "hurley"
 gem "materialize-sass"
+gem "githubstats"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

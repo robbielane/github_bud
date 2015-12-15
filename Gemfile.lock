@@ -38,6 +38,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (6.0.3)
+    basiccache (1.0.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -58,6 +59,7 @@ GEM
     concurrent-ruby (1.0.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
+    curb (0.8.8)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -65,6 +67,10 @@ GEM
       multipart-post (>= 1.2, < 3)
     figaro (1.1.1)
       thor (~> 0.14)
+    githubstats (1.1.0)
+      basiccache (~> 1.0.0)
+      curb (~> 0.8.6)
+      nokogiri (~> 1.6.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashdiff (0.2.2)
@@ -196,6 +202,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   figaro
+  githubstats
   hurley
   jbuilder (~> 2.0)
   jquery-rails
