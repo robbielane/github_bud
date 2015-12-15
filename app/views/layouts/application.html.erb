@@ -3,12 +3,27 @@
 <head>
   <title>GithubApicurious</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="grey lighten-4 z-depth-0">
+    <div class="container">
+      <div class="brand-logo black-text">
+        <bold>GitHub</bold><small>Bud</small>
+      </div>
+      <ul class="right hide-on-med-and-down">
+        <% if current_user %>
+          <li> <%= link_to "Logout", logout_path, class: 'black-text' %> </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
 
-<%= yield %>
+    <%= yield %>
 
+  </div>
 </body>
 </html>

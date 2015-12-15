@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="user-info col m3">
+    <%= image_tag(@github.user_info['avatar_url'], class: 'avatar') %>
+    <h4 class="bold"> <%= @github.user_info['name'] %> </h4>
+    <p> <%= @github.user_info['login'] %> </p>
+    <p class="details"><i class="material-icons">room</i><%= @github.user_info['location'] %><br>
+    <i class="material-icons">query_builder</i> Joined on<%= @github.user_info['created_at'] %> </p>
+    <div class="row center">
+      <div class="col s4">
+        <span class="big"><%= @github.user_info['followers'] %></span><br>
+        <small>followers</small>
+      </div>
+      <div class="col s4">
+        <span class="big">0</span><br>
+        <small>starred</small>
+      </div>
+      <div class="col s4">
+        <span class="big"><%= @github.user_info['following'] %></span><br>
+        <small>following</small>
+      </div>
+    </div>
+  </div>
+  <div class="col m9 repos">
+    <table>
+      <thead>
+        <tr>
+          <th>Repository</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @github.repos.each do |repo| %>
+          <tr>
+            <td><%= repo['name'] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
