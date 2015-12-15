@@ -1,0 +1,16 @@
+<div class="scrollable">
+  <table>
+    <thead>
+      <tr>
+        <th>Repository</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% repos.each do |repo| %>
+      <tr>
+        <td><%= link_to repo.name, repo_path(repo: repo.name) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

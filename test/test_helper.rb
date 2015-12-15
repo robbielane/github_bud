@@ -26,5 +26,24 @@ class ActionDispatch::IntegrationTest
 
   def setup
     Capybara.app = GithubApicurious::Application
+    stub_omniauth
+  end
+
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+      provider: "github",
+      uid: "12688159",
+      extra: {
+        raw_info: {
+          name: "Robbie Lane",
+          login: "robbielane",
+        }
+      },
+      credentials: {
+        token: ENV["SAMPLE_OAUTH_TOKEN"],
+        secret: "secretpizza"
+      }
+    })
   end
 end

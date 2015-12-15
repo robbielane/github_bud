@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
   def events
     GithubService.new(self).events_data.map { |event| OpenStruct.new(event) }
   end
+
+  def stats
+    @stats ||= GithubStats.new(self.nickname)
+  end
 end
