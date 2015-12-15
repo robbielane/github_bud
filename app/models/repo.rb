@@ -14,10 +14,6 @@ class Repo
     service.repos.map { |repo| OpenStruct.new(repo)}
   end
 
-  def self.find
-    service.repo(repo).map { |repo| OpenStuct.new(repo) }
-  end
-
   def self.language_percents
     percents = {}
     total = languages.map { |_,bytes| bytes }.reduce(0, :+)

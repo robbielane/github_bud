@@ -14,3 +14,7 @@
 
 # Ignore application configuration
 /config/application.yml
+
+capy*
+#ignore cassettes
+/test/fixtures/vcr_cassettes
