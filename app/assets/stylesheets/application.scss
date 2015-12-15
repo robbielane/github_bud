@@ -79,3 +79,35 @@ bold {
   overflow-y: scroll;
   overflow-x:hidden;
 }
+
+.pie {
+  width: 300px;
+  background: #f06;
+  border-radius: 50%;
+}
+
+.pie circle {
+  fill: none;
+  stroke-width: 32;
+  /*stroke-dasharray: 75 100;*/
+}
+
+.Ruby {
+  stroke: red;
+}
+
+.CSS {
+  stroke: green;
+}
+
+.HTML {
+  stroke: yellow;
+}
+
+.CoffeeScript {
+  stroke: purple;
+}
+
+.JavaScript {
+  stroke: blue;
+}

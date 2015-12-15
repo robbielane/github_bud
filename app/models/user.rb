@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
       new_user.oauth_token_secret = auth_info.credentials.secret
     end
   end
+
+  def details
+    OpenStruct.new(GithubService.new(self).user_data)
+  end
 end

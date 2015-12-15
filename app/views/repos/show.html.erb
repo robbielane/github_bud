@@ -1,0 +1,9 @@
+<%= @repo.language_percents %>
+
+<svg viewBox="0 0 64 64" class="pie">
+  <% offset = 0 %>
+  <% @repo.language_percents.each do |language, percent| %>
+    <circle r="25%" cx="50%" cy="50%" class="<%= language %>" style="stroke-dasharray: <%= percent %> 100; stroke-dashoffset: -<%= offset %>"></circle>
+    <% offset += percent %>
+  <% end %>
+</svg>
