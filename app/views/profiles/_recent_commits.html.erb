@@ -13,7 +13,7 @@
         <td> <%= commit[:repo] %> </td>
         <td> <%= commit[:time] %> </td>
         <td> <%= commit[:sha][0..6] %> </td>
-        <td> <%= commit[:message][0..29] + '...' %> </td>
+        <td> <%= commit[:message][0..39] + '...' %> </td>
       </tr>
     <% end %>
   </tbody>
