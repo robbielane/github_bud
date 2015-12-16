@@ -20,7 +20,13 @@ class Event
     recent_events.each_with_index do |event, i|
       if event.type == "PushEvent"
         payload = get_payload(event.id).compact.first
-        repo_commits[event.repo[:name] + "#{i}"] = payload.commits
+        payload.commits.each_with_index do |commit, ii|
+          repo_commits["#{i}-#{ii}"] = {}
+          repo_commits["#{i}-#{ii}"][:repo] = event.repo[:name]
+          repo_commits["#{i}-#{ii}"][:sha] = commit[:sha]
+          repo_commits["#{i}-#{ii}"][:message] = commit[:message]
+          repo_commits["#{i}-#{ii}"][:time] = event.created_at
+        end
       end
     end
     repo_commits
