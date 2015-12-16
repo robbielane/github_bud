@@ -1,0 +1,20 @@
+<div class="scrollable">
+  <table class="highlight">
+    <thead>
+      <tr>
+        <th>Repository</th>
+        <th>Star Gazers</th>
+        <th>Watchers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% repos.each do |repo| %>
+      <tr>
+        <td><%= link_to repo.name, repo_path(repo: repo.name), class: 'bold' %></td>
+        <td><%= repo.stargazers_count %></td>
+        <td><%= repo.watchers_count %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

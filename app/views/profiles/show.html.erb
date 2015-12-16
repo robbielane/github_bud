@@ -1,39 +1,9 @@
 <div class="row">
   <div class="user-info col m3">
-    <%= image_tag(current_user.details.avatar_url, class: 'avatar') %>
-    <h4 class="bold"> <%= current_user.details.name %> </h4>
-    <p> <%= current_user.details.login %> </p>
-    <p class="details"><i class="material-icons">room</i><%= current_user.details.location %><br>
-    <i class="material-icons">query_builder</i> Joined on<%= current_user.details.created_at %> </p>
-    <div class="row center">
-      <div class="col s4">
-        <span class="big"><%= current_user.details.followers %></span><br>
-        <small>followers</small>
-      </div>
-      <div class="col s4">
-        <span class="big">0</span><br>
-        <small>starred</small>
-      </div>
-      <div class="col s4">
-        <span class="big"><%= current_user.details.following %></span><br>
-        <small>following</small>
-      </div>
-    </div>
+    <%= render partial: 'sidebar' %>
   </div>
   <div class="col m9 repos">
-    <table>
-      <thead>
-        <tr>
-          <th>Repository</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @repos.each do |repo| %>
-          <tr>
-            <td><%= link_to repo.name, repo_path(repo: repo.name) %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <%= render partial: 'repos', locals: {repos: @repos} %>
+    <%= render partial: 'contributions', locals: {stats: @stats} %>
   </div>
 </div>
