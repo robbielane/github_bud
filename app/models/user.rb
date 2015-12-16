@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     OpenStruct.new(GithubService.new(self).user_data)
   end
 
+  def orgs
+    GithubService.new(self).user_orgs.map { |org| OpenStruct.new(org) }
+  end
+
   def github_join_date
     DateTime.parse(details.created_at).strftime('%b %d, %Y')
   end
