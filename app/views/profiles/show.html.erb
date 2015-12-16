@@ -5,5 +5,6 @@
   <div class="col m9 repos">
     <%= render partial: 'repos', locals: {repos: @repos} %>
     <%= render partial: 'contributions', locals: {stats: @stats} %>
+    <%= render partial: 'recent_commits', locals: {events: @events} %>
   </div>
 </div>

@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Repository</th>
+      <th>Sha</th>
+      <th>Commit Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% events.recent_commits.each do |repo, commits| %>
+      <% commits.each do |commit| %>
+      <tr>
+        <td> <%= repo %> </td>
+        <td> <%= commit[:sha][0..6] %> </td>
+        <td> <%= commit[:message][0..29] + '...' %> </td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

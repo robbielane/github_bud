@@ -94,10 +94,13 @@ GEM
       mime-types (>= 1.16, < 3)
     materialize-sass (0.97.1)
       sass (~> 3.3)
+    metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -208,6 +211,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   materialize-sass
+  mocha
   omniauth-github
   pg
   pry
