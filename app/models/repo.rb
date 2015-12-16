@@ -11,7 +11,11 @@ class Repo
   end
 
   def all
-    service.repos.map { |repo| OpenStruct.new(repo)}
+    service.repos.map { |repo| OpenStruct.new(repo) }
+  end
+
+  def starred
+    service.starred_repos.map { |repo| OpenStruct.new(repo) }
   end
 
   def self.language_percents

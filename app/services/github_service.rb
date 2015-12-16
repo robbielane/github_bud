@@ -20,9 +20,13 @@ class GithubService
     parse(connection.get("/users/#{user.nickname}"))
   end
 
-  # def events_data
-  #   parse(connection.get("/users/#{user.nickname}/events"))
-  # end
+  def starred_repos
+    parse(connection.get("/users/#{user.nickname}/starred"))
+  end
+
+  def events_data
+    parse(connection.get("/users/#{user.nickname}/events"))
+  end
 
   def parse(response)
     JSON.parse(response.body, symbolize_names: true)

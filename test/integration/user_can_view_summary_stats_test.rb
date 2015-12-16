@@ -5,7 +5,7 @@ class UserCanViewSummaryStatsTest < ActionDispatch::IntegrationTest
       click_link 'Login with Github'
 
       within ".contribution" do
-        assert page.has_content?('477 total')
+        assert page.has_content?('484 total')
       end
 
       within ".longest-streak" do
