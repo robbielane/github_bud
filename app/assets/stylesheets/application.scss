@@ -87,7 +87,7 @@ bold {
 .scrollable {
   border: 1px solid #ccc;
   padding: 0 15px;
-  height: 450px;
+  max-height: 450px;
   overflow-y: scroll;
   overflow-x:hidden;
 }

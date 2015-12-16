@@ -29,7 +29,7 @@ class GithubService
   end
 
   def events_data
-    parse(connection.get("/users/#{user.nickname}/events"))
+    parse(connection.get("/users/#{user.nickname}/events", {per_page: 10}))
   end
 
   def parse(response)
