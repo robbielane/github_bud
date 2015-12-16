@@ -50,6 +50,12 @@ body {
   margin-bottom: 5px;
 }
 
+.big-thin {
+  font-size: 36px;
+  font-weight: 200;
+  margin-bottom: 5px;
+}
+
 nav {
   border-bottom: 1px solid #ccc;
   margin-bottom: 25px;
@@ -75,7 +81,7 @@ bold {
 }
 
 .scrollable {
-  height: 600px;
+  height: 550px;
   overflow-y: scroll;
   overflow-x:hidden;
 }
@@ -113,14 +119,17 @@ bold {
 }
 
 .contributions {
-  padding-top: 25px;
+  padding-top: 5px;
 }
 
 .contributions .col {
   border: 1px solid #ccc;
+  padding: 25px 0;
 }
 
 h6 {
+  border-top: 1px solid #ccc;
+  padding: 15px 0 5px 0;
   font-weight: 700;
-  margin-top: 10px;
+  margin-top: 20px;
 }

@@ -4,6 +4,6 @@
   </div>
   <div class="col m9 repos">
     <%= render partial: 'repos', locals: {repos: @repos} %>
-    <%= render partial: 'contributions' %>
+    <%= render partial: 'contributions', locals: {stats: @stats} %>
   </div>
 </div>

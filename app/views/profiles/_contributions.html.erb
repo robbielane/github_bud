@@ -1,12 +1,18 @@
 <h6>Contributions</h6>
 <div class="row contributions">
   <div class="col m4 center contribution">
-    <%= current_user.stats.data.raw.map { |day| day.score }.reduce(0, :+) %><br>Contributions in last year
+    Contributions in the last year<br>
+    <span class="big-thin"><%= stats.year_total[1] %> total</span>
+    <br><%= stats.year_total[0] %>
   </div>
   <div class="col m4 center longest-streak">
-    <%= current_user.stats.longest_streak.count %><br>Days
+    Longest Streak<br>
+    <span class="big-thin"><%= stats.longest[1] %> days</span>
+    <br><%= stats.longest[0] %>
   </div>
   <div class="col m4 center current-streak">
-    <%= current_user.stats.streak.count %><br>Days
+    Current Streak<br>
+    <span class="big-thin"><%= stats.current[1] %> days</span>
+    <br><%= stats.current[0] %>
   </div>
 </div>
