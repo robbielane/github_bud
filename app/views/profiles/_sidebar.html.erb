@@ -5,15 +5,25 @@
 <i class="material-icons">query_builder</i> Joined on <%= current_user.github_join_date %> </p>
 <div class="row center">
   <div class="col s4">
-    <span class="big"><%= current_user.details.followers %></span><br>
+    <span class="big followers"><%= current_user.details.followers %></span><br>
     <small>followers</small>
   </div>
   <div class="col s4">
-    <span class="big"><%= repos.starred.count %></span><br>
+    <span class="big starred"><%= repos.starred.count %></span><br>
     <small>starred</small>
   </div>
   <div class="col s4">
-    <span class="big"><%= current_user.details.following %></span><br>
+    <span class="big following"><%= current_user.details.following %></span><br>
     <small>following</small>
   </div>
+</div>
+<div class="row orgs">
+  <h6 class="bold">Organizations</h6>
+  <% if !current_user.orgs.empty? %>
+    <% current_user.orgs.each do |org| %>
+      <div class="col s3">
+        <%= image_tag org.avatar_url, class: 'org-avatar' %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
