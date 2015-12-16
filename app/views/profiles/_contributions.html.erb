@@ -1,18 +1,20 @@
-<h6>Contributions</h6>
-<div class="row contributions">
-  <div class="col m4 center contribution">
-    Contributions in the last year<br>
-    <span class="big-thin"><%= stats.year_total[1] %> total</span>
-    <br><%= stats.year_total[0] %>
-  </div>
-  <div class="col m4 center longest-streak">
-    Longest Streak<br>
-    <span class="big-thin"><%= stats.longest[1] %> days</span>
-    <br><%= stats.longest[0] %>
-  </div>
-  <div class="col m4 center current-streak">
-    Current Streak<br>
-    <span class="big-thin"><%= stats.current[1] %> days</span>
-    <br><%= stats.current[0] %>
+<div class="wrapper contributions">
+  <div class="row contributions">
+    <h6>Contributions</h6>
+    <div class="col m4 center contribution">
+      Contributions in the last year<br>
+      <span class="big-thin"><%= stats.year_total[1] %> total</span>
+      <br><%= stats.year_total[0] %>
+    </div>
+    <div class="col m4 center longest-streak">
+      Longest Streak<br>
+      <span class="big-thin"><%= stats.longest[1] %> days</span>
+      <br><%= stats.longest[0] %>
+    </div>
+    <div class="col m4 center current-streak">
+      Current Streak<br>
+      <span class="big-thin"><%= stats.current[1] %> days</span>
+      <br><%= stats.current[0] %>
+    </div>
   </div>
 </div>
