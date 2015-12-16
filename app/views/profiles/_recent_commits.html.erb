@@ -1,0 +1,23 @@
+<h6 class="rc">Recent Commits</h6>
+<div class="scrollable recent-commits">
+  <table>
+    <thead>
+      <tr>
+        <th>Repository</th>
+        <th>Time</th>
+        <th>Sha</th>
+        <th>Commit Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% events.recent_commits.each do |num, commit| %>
+      <tr>
+        <td> <%= commit[:repo] %> </td>
+        <td> <%= commit[:time] %> </td>
+        <td> <%= commit[:sha][0..6] %> </td>
+        <td> <%= commit[:message][0..39] + '...' %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

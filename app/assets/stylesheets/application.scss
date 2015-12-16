@@ -85,7 +85,9 @@ bold {
 }
 
 .scrollable {
-  height: 550px;
+  border: 1px solid #ccc;
+  padding: 0 15px;
+  max-height: 450px;
   overflow-y: scroll;
   overflow-x:hidden;
 }
@@ -122,6 +124,10 @@ bold {
   stroke: blue;
 }
 
+.wrapper {
+  padding: 12px;
+}
+
 .contributions {
   padding-top: 5px;
 }
@@ -131,8 +137,11 @@ bold {
   padding: 25px 0;
 }
 
+.rc {
+  margin-top: 0;
+}
+
 h6 {
-  border-top: 1px solid #ccc;
   padding: 15px 0 5px 0;
   font-weight: 700;
   margin-top: 20px;

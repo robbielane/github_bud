@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserCanViewSidebarTest < ActionDispatch::IntegrationTest
   test 'it shows the user details' do
-    VCR.use_cassette('user-stats') do
+    VCR.use_cassette('user-profile') do
       visit '/'
       click_link 'Login with Github'
 

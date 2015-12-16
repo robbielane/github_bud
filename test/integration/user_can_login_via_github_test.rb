@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserCanLoginViaGithubTest < ActionDispatch::IntegrationTest
   test "logging in" do
-    VCR.use_cassette("user-login") do
+    VCR.use_cassette("user-profile") do
       visit "/"
       assert_equal 200, page.status_code
       click_link "Login with Github"
