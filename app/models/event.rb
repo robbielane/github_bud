@@ -21,11 +21,12 @@ class Event
       if event.type == "PushEvent"
         payload = get_payload(event.id).compact.first
         payload.commits.each_with_index do |commit, ii|
+          time = DateTime.parse(event.created_at).strftime('%b %d, %Y - %r')
           repo_commits["#{i}-#{ii}"] = {}
           repo_commits["#{i}-#{ii}"][:repo] = event.repo[:name]
           repo_commits["#{i}-#{ii}"][:sha] = commit[:sha]
           repo_commits["#{i}-#{ii}"][:message] = commit[:message]
-          repo_commits["#{i}-#{ii}"][:time] = event.created_at
+          repo_commits["#{i}-#{ii}"][:time] = time
         end
       end
     end
