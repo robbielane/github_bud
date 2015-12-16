@@ -2,7 +2,7 @@
 <h4 class="bold"> <%= current_user.details.name %> </h4>
 <p> <%= current_user.details.login %> </p>
 <p class="details"><i class="material-icons">room</i><%= current_user.details.location %><br>
-<i class="material-icons">query_builder</i> Joined on<%= current_user.details.created_at %> </p>
+<i class="material-icons">query_builder</i> Joined on <%= current_user.github_join_date %> </p>
 <div class="row center">
   <div class="col s4">
     <span class="big"><%= current_user.details.followers %></span><br>

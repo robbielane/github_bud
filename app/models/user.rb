@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   def details
     OpenStruct.new(GithubService.new(self).user_data)
   end
+
+  def github_join_date
+    DateTime.parse(details.created_at).strftime('%b %d, %Y')
+  end
 end
