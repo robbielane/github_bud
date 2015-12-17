@@ -1,0 +1,19 @@
+<div class="row" id="language_percents">
+  <h5 class="bold pie-title">Languages</h5>
+  <div class="col s12 m6">
+    <svg viewBox="0 0 64 64" class="pie">
+      <% offset = 0 %>
+      <% repo.language_percents.each do |language, percent| %>
+      <circle r="25%" cx="50%" cy="50%" class="<%= language %>" style="stroke-dasharray: <%= percent %> 100; stroke-dashoffset: -<%= offset %>"></circle>
+      <% offset += percent %>
+      <% end %>
+    </svg>
+  </div>
+  <div class="col s12 m6">
+    <% repo.language_percents.each do |language, percent| %>
+    <ul>
+      <li class="lang"> <%= embedded_svg 'box.svg', class: "#{language} box" %> <%= "#{language} - #{percent}%" %> </li>
+    </ul>
+    <% end %>
+  </div>
+</div>

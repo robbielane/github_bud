@@ -1,0 +1,22 @@
+<div class="scrollable" id="commits">
+  <table>
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Sha</th>
+        <th>Author</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @repo.commits.each do |commit| %>
+      <tr>
+        <td><%= format_date_time(commit.commit[:committer][:date]) %></td>
+        <td><%= commit.sha[0..6] %></td>
+        <td><%= commit.commit[:author][:name] %></td>
+        <td><%= commit.commit[:message][0..39] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

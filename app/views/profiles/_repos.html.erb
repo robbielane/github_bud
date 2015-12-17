@@ -9,7 +9,7 @@
     </thead>
     <tbody>
       <% repos.all.each do |repo| %>
-      <tr>
+      <tr class="clickable" data-link="<%= repo_path(repo: repo.name) %>">
         <td><%= link_to repo.name, repo_path(repo: repo.name), class: 'bold' %></td>
         <td><%= repo.stargazers_count %></td>
         <td><%= repo.watchers_count %></td>
