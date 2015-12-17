@@ -93,8 +93,8 @@ bold {
 }
 
 .pie {
-  width: 300px;
-  background: #f06;
+  width: 100%;
+  background: #fff;
   border-radius: 50%;
 }
 
@@ -104,24 +104,72 @@ bold {
   /*stroke-dasharray: 75 100;*/
 }
 
-.Ruby {
-  stroke: red;
+.box {
+  height: 20px;
+  width: 20px;
 }
 
-.CSS {
-  stroke: green;
+.lang {
+  line-height: -5px;
 }
 
-.HTML {
-  stroke: yellow;
+.Ruby, .color0 {
+  stroke: #82A630;
+  fill: #82A630;
 }
 
-.CoffeeScript {
-  stroke: purple;
+.CSS, .color1 {
+  stroke: #324467;
+  fill: #324467;
 }
 
-.JavaScript {
-  stroke: blue;
+.HTML, .color2 {
+  stroke: #495A23;
+  fill: #495A23;
+}
+
+.CoffeeScript, .color3 {
+  stroke: #8D3728;
+  fill: #8D3728;
+}
+
+.JavaScript, .color4 {
+  stroke: #A64838;
+  fill: #A64838;
+}
+
+.Python, .color5 {
+  stroke: #A6883F;
+  fill: #A6883F;
+}
+
+.PHP, .color6 {
+  stroke: #48675B;
+  fill: #48675B;
+}
+
+.Java, .color7 {
+  stroke: #5A4C2B;
+  fill: #5A4C2B;
+}
+
+.Shell .color8 {
+  stroke: #7A368D;
+  fill: #7A368D;
+}
+
+.C, .color9 {
+  stroke: #DF48A6;
+  fill: #DF48A6;
+}
+
+.Objective-C, .color10 {
+  stroke: #DF58A6;
+  fill: #DF58A6;
+}
+
+.pie-title {
+  margin-bottom: 30px;
 }
 
 .wrapper {
@@ -145,4 +193,12 @@ h6 {
   padding: 15px 0 5px 0;
   font-weight: 700;
   margin-top: 20px;
+}
+
+.commits {
+  margin-bottom: 30px;
+}
+
+.clickable {
+  cursor: pointer;
 }

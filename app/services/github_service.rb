@@ -12,8 +12,20 @@ class GithubService
     parse(connection.get("/users/#{user.nickname}/repos"))
   end
 
-  def repo(repo)
-    parse(connection.get("/repos/#{user.nickname}/#{repo}"))
+  def repo(repo_name)
+    parse(connection.get("/repos/#{user.nickname}/#{repo_name}"))
+  end
+
+  def repo_commits(repo_name)
+    parse(connection.get("/repos/#{user.nickname}/#{repo_name}/commits"))
+  end
+
+  def languages(repo_name)
+    parse(connection.get("/repos/#{user.nickname}/#{repo_name}/languages"))
+  end
+
+  def stats(repo_name)
+    parse(connection.get("/repos/#{user.nickname}/#{repo_name}/stats/contributors"))
   end
 
   def user_data

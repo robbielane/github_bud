@@ -1,9 +1,12 @@
-<%= @repo.language_percents %>
-
-<svg viewBox="0 0 64 64" class="pie">
-  <% offset = 0 %>
-  <% @repo.language_percents.each do |language, percent| %>
-    <circle r="25%" cx="50%" cy="50%" class="<%= language %>" style="stroke-dasharray: <%= percent %> 100; stroke-dashoffset: -<%= offset %>"></circle>
-    <% offset += percent %>
-  <% end %>
-</svg>
+<div class="row">
+  <h2><%= @repo.repo %></h2>
+  <div class="col s12 commits">
+    <%= render partial: 'commits', locals: {repo: @repo} %>
+  </div>
+  <div class="col s12 m6">
+    <%= render partial: 'languages', locals: {repo: @repo} %>
+  </div>
+  <div class="col s12 m6">
+    <%= render partial: 'contributors', locals: {repo: @repo} %>
+  </div>
+</div>

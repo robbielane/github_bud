@@ -4,6 +4,9 @@ require 'rails/test_help'
 require 'mocha/mini_test'
 require 'capybara/rails'
 require 'vcr'
+require 'simplecov'
+
+SimpleCov.start
 
 VCR.configure do |c|
   c.cassette_library_dir = 'test/fixtures/vcr_cassettes'
