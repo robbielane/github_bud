@@ -7,11 +7,13 @@ class Contributions
   end
 
   def current
+    return ["no streak", 0] if stats.streak.empty?
     dates = "#{format_date(stats.streak.first.date)}" + " - " + "#{format_date(stats.streak.last.date)}"
     [dates, stats.streak.count]
   end
 
   def longest
+    return ["no streak", 0] if stats.longest_streak.empty?
     dates = "#{format_date(stats.longest_streak.first.date)}" + " - " + "#{format_date(stats.longest_streak.last.date)}"
     [dates, stats.longest_streak.count]
   end
