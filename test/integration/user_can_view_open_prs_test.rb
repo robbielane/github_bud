@@ -9,7 +9,10 @@ class UserCanViewOpenPrsTest < ActionDispatch::IntegrationTest
 
       within '.pull-requests' do
         assert page.has_content?('github_bud	14 view pull requests [WIP]	Add recent PRs to profile')
+        click_link 'Merge'
       end
+
+      assert page.has_content? "Sorry, something went wrong" # ;)
     end
   end
 end

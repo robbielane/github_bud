@@ -49,7 +49,7 @@ class GithubService
   end
 
   def merge_pr(repo_name, pr_number)
-    response = connection.post("/repos/#{user.nickname}/#{repo_name}/pulls/#{pr_number}/merge")
+    response = connection.put("/repos/#{user.nickname}/#{repo_name}/pulls/#{pr_number}/merge")
     response.success?
   end
 
