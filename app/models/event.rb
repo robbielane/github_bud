@@ -6,13 +6,28 @@ class Event
   end
 
   def recent_events
-    service.events_data.map { |event| OpenStruct.new(event) }
+    @events ||= service.events_data.map { |event| OpenStruct.new(event) }
   end
 
   def get_payload(id)
     recent_events.map do |event|
       OpenStruct.new(event.payload) if event.id == id
     end
+  end
+
+  def recent_pull_requests
+    prs = {}
+    recent_events.each_with_index do |event|
+      if event.type == "PullRequestEvent"
+        payload = get_payload(event.id).compact.first
+        prs[payload.pull_request[:head][:label]] = {}
+        prs[payload.pull_request[:head][:label]][:title] = payload[:pull_request][:title]
+        prs[payload.pull_request[:head][:label]][:body] = payload[:pull_request][:body]
+        prs[payload.pull_request[:head][:label]][:time] = payload[:pull_request][:created_at]
+        prs[payload.pull_request[:head][:label]][:link] = payload[:pull_request][:html_url]
+      end
+    end
+    prs
   end
 
   def recent_commits

@@ -15,11 +15,16 @@
       </div>
       <ul class="right hide-on-med-and-down">
         <% if current_user %>
+          <li> <%= link_to "Pull Requests", pull_requests_path, class: 'black-text' %></li>
           <li> <%= link_to "Logout", logout_path, class: 'black-text' %> </li>
         <% end %>
       </ul>
     </div>
   </nav>
+  
+  <%= content_tag :p, flash[:error], class: "flash_error" %>
+  <%= content_tag :p, flash[:notice], class: "flash_notice" %>
+
   <div class="container">
 
     <%= yield %>

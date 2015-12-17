@@ -1,0 +1,23 @@
+<h6 class="rc rprs">Recent Pull Requests</h6>
+<div class="scrollable recent-pull-requests">
+  <table>
+    <thead>
+      <tr>
+        <th>Repository/Branch</th>
+        <th>Time</th>
+        <th>Title</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% events.recent_pull_requests.each do |pr, details| %>
+      <tr class="clickable" data-link="<%= details[:link] %>">
+        <td> <%= link_to pr, details[:link] %> </td>
+        <td> <%= format_date_time(details[:time]) %> </td>
+        <td> <%= details[:title] %> </td>
+        <td> <%= details[:body][0..39]%> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
