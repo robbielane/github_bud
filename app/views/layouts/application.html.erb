@@ -15,6 +15,7 @@
       </div>
       <ul class="right hide-on-med-and-down">
         <% if current_user %>
+          <li> <%= link_to "Pull Requests", '#', class: 'black-text' %></li>
           <li> <%= link_to "Logout", logout_path, class: 'black-text' %> </li>
         <% end %>
       </ul>
