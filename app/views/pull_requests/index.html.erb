@@ -1,0 +1,24 @@
+<h4>Open Pull Requests</h4>
+
+<div class="scrollable pull-requests">
+  <table>
+    <thead>
+      <tr>
+        <th>Repository</th>
+        <th>Title</th>
+        <th>Message</th>
+        <th>Merge</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pull_requests.each do |pr| %>
+      <tr>
+        <td><%= pr.head[:repo][:name] %></td>
+        <td><%= pr.title %></td>
+        <td><%= pr.body %></td>
+        <td><%= link_to "Merge", merge_path(repo: pr.head[:repo][:name], pr_num: pr.number), method: :put %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -20,6 +20,10 @@ class GithubService
     parse(connection.get("/repos/#{user.nickname}/#{repo_name}/commits"))
   end
 
+  def repo_pull_requests(repo_name)
+    parse(connection.get("/repos/#{user.nickname}/#{repo_name}/pulls", {state: "open"}))
+  end
+
   def languages(repo_name)
     parse(connection.get("/repos/#{user.nickname}/#{repo_name}/languages"))
   end
@@ -42,6 +46,11 @@ class GithubService
 
   def events_data
     parse(connection.get("/users/#{user.nickname}/events", {per_page: 10}))
+  end
+
+  def merge_pr(repo_name, pr_number)
+    response = connection.post("/repos/#{user.nickname}/#{repo_name}/pulls/#{pr_number}/merge")
+    response.success?
   end
 
   def parse(response)
