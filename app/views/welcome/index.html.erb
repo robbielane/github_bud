@@ -1,5 +1,6 @@
-<% if current_user %>
-  <%= link_to "Logout", logout_path %>
-<% else %>
-  <%= link_to "Login with Github", login_path %>
-<% end %>
+<div class="login center">
+  <a href="<%= login_path %>">
+    <%= image_tag('Octocat.png') %><br>
+    <%= link_to "Login with Github", login_path %>
+  </a>
+</div>
