@@ -12,4 +12,17 @@ class UserCanLoginViaGithubTest < ActionDispatch::IntegrationTest
       assert page.has_link?("Logout")
     end
   end
+
+  test 'logging out' do
+    VCR.use_cassette('user-profile') do
+      visit "/"
+      click_link "Login with Github"
+
+      assert_equal "/robbielane", current_path
+
+      click_link "Logout"
+
+      assert_equal "/", current_path
+    end
+  end
 end
