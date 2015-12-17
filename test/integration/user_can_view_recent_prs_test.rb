@@ -7,7 +7,7 @@ class UserCanSeePrsTest < ActionDispatch::IntegrationTest
       click_link 'Login with Github'
 
       within '.recent-pull-requests' do
-        assert page.has_content?('robbielane:sad-paths	Dec 17, 2015 - 06:22:48 AM	add logout test	-make graph generators')
+        assert page.has_content?('robbielane:7-view-organizations-user-is-a-member-of	Dec 16, 2015 - 10:17:39 PM	add orgs to sidebar	')
       end
     end
   end
