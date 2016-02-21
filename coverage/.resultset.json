@@ -469,15 +469,6 @@
         null,
         null
       ],
-      "/Users/robbielane/turing/mod_3/github_apicurious/app/controllers/repos_controller.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
       "/Users/robbielane/turing/mod_3/github_apicurious/app/controllers/pull_requests_controller.rb": [
         1,
         1,
@@ -522,8 +513,17 @@
         1,
         null,
         null
+      ],
+      "/Users/robbielane/turing/mod_3/github_apicurious/app/controllers/repos_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1450764759
+    "timestamp": 1456021345
   }
 }
