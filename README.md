@@ -3,12 +3,12 @@ A project that uses Github's API and OAuth to show statistics and graphs about g
 
 Visit the production site at [http://githubbud.herokuapp.com](http://githubbud.herokuapp.com)
 
-##### Repo Graphs
+### Repo Graphs
 
 Each repository shows graphs that break down the commit history and languages used.
 
 ![graphs](graphs.png)
 
-##### User Stats and Recent Activity
+### User Stats and Recent Activity
 
 ![stats](stats.png)
